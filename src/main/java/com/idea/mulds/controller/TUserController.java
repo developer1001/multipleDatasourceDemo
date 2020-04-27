@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.idea.mulds.persistent.entity.TUser;
 import com.idea.mulds.service.TUserService;
-
+/**
+ * 数据源1的t_user
+ * @date 2020-04-27 17:16:27
+ * @author yang
+ */
 @RestController
 @RequestMapping("/tUser")
 public class TUserController {

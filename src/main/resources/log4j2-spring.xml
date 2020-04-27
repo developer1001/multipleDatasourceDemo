@@ -49,42 +49,6 @@
 			<ThresholdFilter level="error" onMatch="ACCEPT"
 				onMismatch="DENY" />
 		</RollingRandomAccessFile>
-		<!-- <RollingRandomAccessFile name="fatalLog"
-			immediateFlush="true" fileName="${LOG_HOME}/fatalService.log"
-			filePattern="${LOG_HOME}/fatalService.log.%d{yyyy-MM-dd}.log.gz">
-			<PatternLayout>
-				<pattern>[%d{yyyy-MM-dd HH:mm:ss SSS}] [%-5p] %c - %m%n</pattern>
-			</PatternLayout>
-			<Policies>
-				<TimeBasedTriggeringPolicy interval="1"
-					modulate="true" />
-			</Policies>
-			<DefaultRolloverStrategy>
-				<Delete basePath="${LOG_HOM}" maxDepth="1">
-					<IfFileName glob="fatalService*.gz" />
-					<IfLastModified age="7d" />
-				</Delete>
-			</DefaultRolloverStrategy>
-			<ThresholdFilter level="fatal" onMatch="ACCEPT"
-				onMismatch="DENY" />
-		</RollingRandomAccessFile> -->
-		<!-- <RollingRandomAccessFile name="druidSqlLog"
-			immediateFlush="true" fileName="${LOG_HOME}/druidSql.log"
-			filePattern="${LOG_HOME}/druidSql-%d{yyyy-MM-dd}.log.gz">
-			<PatternLayout>
-				<pattern>[%d{yyyy-MM-dd HH:mm:ss SSS}] [%-5p] %c - %m%n</pattern>
-			</PatternLayout>
-			<Policies>
-				<TimeBasedTriggeringPolicy interval="1"
-					modulate="true" />
-			</Policies>
-			<DefaultRolloverStrategy>
-				<Delete basePath="${LOG_HOM}" maxDepth="1">
-					<IfFileName glob="druidSql*.gz" />
-					<IfLastModified age="3d" />
-				</Delete>
-			</DefaultRolloverStrategy>
-		</RollingRandomAccessFile> -->
 	</Appenders>
 	<Loggers>
 		<!-- 根logger的设置 -->
@@ -95,6 +59,8 @@
 		</root>
 		<!-- 开启mybatis的sql日志,级别为debug或trace-->
         <Logger name="com.idea.mulds.persistent.dao" level="debug" additivity="true">
+		</Logger>
+		 <Logger name="com.idea.mulds.persistent.persistent2.dao" level="debug" additivity="true">
 		</Logger>
 		<logger name="org.mybatis" level="debug" additivity="true">
 		</logger>
